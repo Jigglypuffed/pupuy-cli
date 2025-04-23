@@ -38,6 +38,7 @@ while True:
                     board.move_down()
             engine.stdin.write(cmds[0] + cmds[1] + "\n")
             engine.stdin.flush()
+            board.print_board()
 
         case "add":
             if cmds[1] == "random":
@@ -53,6 +54,7 @@ while True:
                 board.tiles[row][col] = int(cmds[2], 16)
                 engine.stdin.write(cmds[0] + cmds[1] + cmds[2] + "\n")
                 engine.stdin.flush()
+            board.print_board()
 
         case "position":
             board = board_from_fen(cmds[1])
