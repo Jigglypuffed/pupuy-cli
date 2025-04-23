@@ -15,5 +15,6 @@ python main.py "~/engine.bin"
 | position xxxx/xxxx/xxxx/xxxx | Set position, each row is separated by '/' and 'x' representing exponent. e.g. 0002/1110/2322/0000                                         |
 | Move [direction]             | Slide the tiles in the given direction. Direction can be 'l', 'r', 'u', or 'd'                                                             |
 | go time [millisecond]        | Instruct the engine to search for a specified amount of time.                                                                              |
+| show                         | Display the board.                                                                                                                         |
 | exit                         | Exit the program.                                                                                                                          |
 
