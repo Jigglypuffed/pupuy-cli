@@ -17,7 +17,6 @@ engine = subprocess.Popen(
 )
 assert engine.stdin and engine.stdout is not None
 
-print(engine.stdout.readline())
 board = Board([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
 engine.stdin.write("position 0000/0000/0000/0000\n")
 engine.stdin.flush()
