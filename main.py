@@ -21,7 +21,8 @@ board = Board([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
 engine.stdin.write("position 0000/0000/0000/0000\n")
 engine.stdin.flush()
 while True:
-    cmds = input().strip().split(" ")
+    full_cmd =  input()
+    cmds = full_cmd.strip().split(" ")
     match cmds[0]:
         case "exit":
             exit()
@@ -36,7 +37,7 @@ while True:
                     board.move_up()
                 case "d":
                     board.move_down()
-            engine.stdin.write(cmds[0] + cmds[1] + "\n")
+            engine.stdin.write(full_cmd + "\n")
             engine.stdin.flush()
             board.print_board()
 
@@ -52,12 +53,14 @@ while True:
                 row = int(cmds[1]) // 4
                 col = int(cmds[1]) % 4
                 board.tiles[row][col] = int(cmds[2], 16)
-                engine.stdin.write(cmds[0] + cmds[1] + cmds[2] + "\n")
+                engine.stdin.write(full_cmd + "\n")
                 engine.stdin.flush()
             board.print_board()
 
         case "position":
             board = board_from_fen(cmds[1])
+            engine.stdin.write(full_cmd + "\n")
+            engine.stdin.flush()
 
         case "show":
             board.print_board()
